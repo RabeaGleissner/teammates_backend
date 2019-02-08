@@ -1,4 +1,4 @@
-defmodule TimeZonesWeb.ErrorHelpers do
+defmodule TeamMatesWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -36,9 +36,9 @@ defmodule TimeZonesWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(TimeZonesWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TeamMatesWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(TimeZonesWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TeamMatesWeb.Gettext, "errors", msg, opts)
     end
   end
 end

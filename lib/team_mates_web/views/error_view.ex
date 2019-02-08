@@ -1,5 +1,5 @@
-defmodule TimeZonesWeb.ErrorView do
-  use TimeZonesWeb, :view
+defmodule TeamMatesWeb.ErrorView do
+  use TeamMatesWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

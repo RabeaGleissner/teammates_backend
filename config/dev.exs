@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :time_zones, TimeZonesWeb.Endpoint,
+config :team_mates, TeamMatesWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -46,13 +46,13 @@ config :time_zones, TimeZonesWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :time_zones, TimeZonesWeb.Endpoint,
+config :team_mates, TeamMatesWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/time_zones_web/views/.*(ex)$},
-      ~r{lib/time_zones_web/templates/.*(eex)$}
+      ~r{lib/team_mates_web/views/.*(ex)$},
+      ~r{lib/team_mates_web/templates/.*(eex)$}
     ]
   ]
 
@@ -67,9 +67,9 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
-config :time_zones, TimeZones.Repo,
+config :team_mates, TeamMates.Repo,
   username: "postgres",
   password: "postgres",
-  database: "time_zones_dev",
+  database: "team_mates_dev",
   hostname: "localhost",
   pool_size: 10

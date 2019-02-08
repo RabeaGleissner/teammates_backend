@@ -1,4 +1,4 @@
-defmodule TimeZonesWeb.ConnCase do
+defmodule TeamMatesWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule TimeZonesWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias TimeZonesWeb.Router.Helpers, as: Routes
+      alias TeamMatesWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint TimeZonesWeb.Endpoint
+      @endpoint TeamMatesWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TimeZones.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TeamMates.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TimeZones.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(TeamMates.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

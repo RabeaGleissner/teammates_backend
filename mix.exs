@@ -1,9 +1,9 @@
-defmodule TimeZones.MixProject do
+defmodule TeamMates.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :time_zones,
+      app: :team_mates,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule TimeZones.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {TimeZones.Application, []},
+      mod: {TeamMates.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -54,6 +54,7 @@ defmodule TimeZones.MixProject do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
+      "ecto.seed": ["run priv/repo/seeds.exs"],
       "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate", "test"]

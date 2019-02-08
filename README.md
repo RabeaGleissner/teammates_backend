@@ -1,4 +1,4 @@
-# TimeZones
+# TeamMates
 
 To start your Phoenix server:
 

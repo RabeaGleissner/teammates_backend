@@ -1,4 +1,4 @@
-defmodule TimeZones.DataCase do
+defmodule TeamMates.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule TimeZones.DataCase do
 
   using do
     quote do
-      alias TimeZones.Repo
+      alias TeamMates.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import TimeZones.DataCase
+      import TeamMates.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TimeZones.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TeamMates.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TimeZones.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(TeamMates.Repo, {:shared, self()})
     end
 
     :ok

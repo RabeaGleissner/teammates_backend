@@ -1,5 +1,5 @@
-defmodule TimeZonesWeb.PageControllerTest do
-  use TimeZonesWeb.ConnCase
+defmodule TeamMatesWeb.PageControllerTest do
+  use TeamMatesWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

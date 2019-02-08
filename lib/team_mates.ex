@@ -1,6 +1,6 @@
-defmodule TimeZones do
+defmodule TeamMates do
   @moduledoc """
-  TimeZones keeps the contexts that define your domain
+  TeamMates keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

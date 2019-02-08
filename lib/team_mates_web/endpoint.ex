@@ -1,7 +1,7 @@
-defmodule TimeZonesWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :time_zones
+defmodule TeamMatesWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :team_mates
 
-  socket "/socket", TimeZonesWeb.UserSocket,
+  socket "/socket", TeamMatesWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule TimeZonesWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :time_zones,
+    from: :team_mates,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -39,8 +39,8 @@ defmodule TimeZonesWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_time_zones_key",
+    key: "_team_mates_key",
     signing_salt: "Q1ZVZNtI"
 
-  plug TimeZonesWeb.Router
+  plug TeamMatesWeb.Router
 end

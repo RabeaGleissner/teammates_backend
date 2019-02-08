@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :time_zones,
-  ecto_repos: [TimeZones.Repo]
+config :team_mates,
+  ecto_repos: [TeamMates.Repo]
 
 # Configures the endpoint
-config :time_zones, TimeZonesWeb.Endpoint,
+config :team_mates, TeamMatesWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5RI06oOl4V29ifdeGcYPdgJtUegr5qIb/zVikzLNbXeACo4oZ9jr/niCD6A+El4O",
-  render_errors: [view: TimeZonesWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: TimeZones.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: TeamMatesWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: TeamMates.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

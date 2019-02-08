@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :time_zones, TimeZonesWeb.Endpoint,
+config :team_mates, TeamMatesWeb.Endpoint,
   http: [port: 4002],
   server: false
 
@@ -10,9 +10,9 @@ config :time_zones, TimeZonesWeb.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :time_zones, TimeZones.Repo,
+config :team_mates, TeamMates.Repo,
   username: "postgres",
   password: "postgres",
-  database: "time_zones_test",
+  database: "team_mates_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

@@ -1,4 +1,4 @@
-defmodule TimeZones.Application do
+defmodule TeamMates.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,23 +9,23 @@ defmodule TimeZones.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      TimeZones.Repo,
+      TeamMates.Repo,
       # Start the endpoint when the application starts
-      TimeZonesWeb.Endpoint
-      # Starts a worker by calling: TimeZones.Worker.start_link(arg)
-      # {TimeZones.Worker, arg},
+      TeamMatesWeb.Endpoint
+      # Starts a worker by calling: TeamMates.Worker.start_link(arg)
+      # {TeamMates.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: TimeZones.Supervisor]
+    opts = [strategy: :one_for_one, name: TeamMates.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    TimeZonesWeb.Endpoint.config_change(changed, removed)
+    TeamMatesWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

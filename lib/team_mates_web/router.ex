@@ -1,5 +1,5 @@
-defmodule TimeZonesWeb.Router do
-  use TimeZonesWeb, :router
+defmodule TeamMatesWeb.Router do
+  use TeamMatesWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,15 @@ defmodule TimeZonesWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", TimeZonesWeb do
+  scope "/", TeamMatesWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/add_team_members", TeamMembersController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TimeZonesWeb do
+  # scope "/api", TeamMatesWeb do
   #   pipe_through :api
   # end
 end

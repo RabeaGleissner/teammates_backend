@@ -1,11 +1,11 @@
-defmodule TimeZonesWeb.Gettext do
+defmodule TeamMatesWeb.Gettext do
   @moduledoc """
   A module providing Internationalization with a gettext-based API.
 
   By using [Gettext](https://hexdocs.pm/gettext),
   your module gains a set of macros for translations, for example:
 
-      import TimeZonesWeb.Gettext
+      import TeamMatesWeb.Gettext
 
       # Simple translation
       gettext("Here is the string to translate")
@@ -20,5 +20,5 @@ defmodule TimeZonesWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :time_zones
+  use Gettext, otp_app: :team_mates
 end

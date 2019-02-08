@@ -1,11 +1,7 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     TimeZones.Repo.insert!(%TimeZones.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+{_, start_work} = Time.new(9, 0, 0)
+{_, finish_work} = Time.new(17, 0, 0)
+TeamMates.Repo.insert!(%TeamMates.TeamMember{name: "Fred", time_zone: "DE"})
+TeamMates.Repo.insert!(%TeamMates.TeamMember{name: "Wilma", time_zone: "US"})
+TeamMates.Repo.insert!(%TeamMates.TeamMember{name: "Bamm-Bamm", time_zone: "GB"})
+TeamMates.Repo.insert!(%TeamMates.TeamMember{name: "Pebbles", time_zone: "SG"})
+TeamMates.Repo.insert!(%TeamMates.TeamMember{name: "Barney", time_zone: "GB"})
