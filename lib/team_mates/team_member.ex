@@ -4,8 +4,9 @@ defmodule TeamMates.TeamMember do
 
 
   schema "team_members" do
-    field :finish_work, :time
     field :name, :string
+    field :time_zone, :string
+    has_many :working_hours, TeamMates.WorkingHour
 
     timestamps()
   end
