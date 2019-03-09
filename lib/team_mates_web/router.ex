@@ -20,6 +20,12 @@ defmodule TeamMatesWeb.Router do
     get "/add_team_members", TeamMembersController, :index
   end
 
+  scope "/api", TeamMatesWeb do
+    pipe_through :api
+
+    get "/team_mates", TeamMatesController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", TeamMatesWeb do
   #   pipe_through :api

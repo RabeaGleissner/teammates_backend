@@ -6,11 +6,11 @@ defmodule TeamMates.Repo.Migrations.CreateWorkingHours do
       add :start, :time
       add :finish, :time
       add :date, :date
-      add :user_id, references(:team_members, on_delete: :delete_all)
+      add :team_member_id, references(:team_members, on_delete: :delete_all)
 
       timestamps()
     end
 
-    create index(:working_hours, [:user_id])
+    create index(:working_hours, [:team_member_id])
   end
 end
