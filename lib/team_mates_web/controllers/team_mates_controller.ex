@@ -7,4 +7,9 @@ defmodule TeamMatesWeb.TeamMatesController do
     team_members = TeamMember.all()
     json(conn, team_members)
   end
+
+  def create(conn, params) do
+    id = TeamMember.store(conn, params)
+    json(conn, id)
+  end
 end

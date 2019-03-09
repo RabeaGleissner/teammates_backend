@@ -24,6 +24,11 @@ defmodule TeamMates.TeamMember do
     Repo.all(query)
   end
 
+  def store(conn, %{"name" => name, "time_zone" => time_zone}) do
+    {_, %{id: id} }= Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
+    id
+  end
+
   @doc false
   def changeset(team_member, attrs) do
     team_member

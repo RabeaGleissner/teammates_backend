@@ -24,6 +24,7 @@ defmodule TeamMatesWeb.Router do
     pipe_through :api
 
     get "/team_mates", TeamMatesController, :index
+    post "/team_mates", TeamMatesController, :create
   end
 
   # Other scopes may use custom stacks.
