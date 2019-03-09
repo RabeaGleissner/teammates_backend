@@ -2,8 +2,7 @@ defmodule TeamMates.WorkingHour do
   use Ecto.Schema
   import Ecto.Query
   import Ecto.Changeset
-  alias TeamMates.WorkingHour
-  alias TeamMates.Repo
+  alias TeamMates.TeamMember
 
 
   @derive {Poison.Encoder, only: [:date, :finish, :start]}
@@ -11,19 +10,15 @@ defmodule TeamMates.WorkingHour do
     field :date, :date
     field :finish, :time
     field :start, :time
-    belongs_to :team_member, TeamMates.TeamMember
+    belongs_to :team_member, TeamMember
 
     timestamps()
-  end
-
-  def all do
-    all = Repo.all(from w in WorkingHour, order_by: w.date)
   end
 
   @doc false
   def changeset(working_hour, attrs) do
     working_hour
-    |> cast(attrs, [:start, :end, :date])
-    |> validate_required([:start, :end, :date])
+    |> cast(attrs, [:start, :finish, :date])
+    |> validate_required([:start, :finish, :date])
   end
 end

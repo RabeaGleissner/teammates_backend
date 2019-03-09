@@ -4,19 +4,24 @@ defmodule TeamMates.TeamMember do
   import Ecto.Query
   alias TeamMates.Repo
   alias TeamMates.TeamMember
+  alias TeamMates.WorkingHour
 
 
-  @derive {Poison.Encoder, only: [:name, :time_zone]}
+  @derive {Poison.Encoder, only: [:name, :time_zone, :working_hours]}
   schema "team_members" do
     field :name, :string
     field :time_zone, :string
-    has_many :working_hours, TeamMates.WorkingHour
+    has_many :working_hours, WorkingHour
 
     timestamps()
   end
 
   def all do
-    all = Repo.all(from t in TeamMember, order_by: t.name)
+    query = from t in TeamMember,
+      join: w in WorkingHour,
+      where: w.team_member_id == t.id,
+      preload: [working_hours: w]
+    Repo.all(query)
   end
 
   @doc false
