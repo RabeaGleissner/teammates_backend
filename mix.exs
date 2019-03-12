@@ -43,6 +43,7 @@ defmodule TeamMates.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:poison, "~> 3.1"},
+      {:ex_machina, "~> 2.3", only: :test},
       {:plug_cowboy, "~> 2.0"}
     ]
   end

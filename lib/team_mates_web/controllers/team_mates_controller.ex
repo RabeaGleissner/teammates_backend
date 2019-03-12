@@ -1,7 +1,6 @@
 defmodule TeamMatesWeb.TeamMatesController do
   use TeamMatesWeb, :controller
   alias TeamMates.TeamMember
-  alias TeamMates.WorkingHour
 
   def index(conn, _params) do
     team_members = TeamMember.all()
@@ -9,7 +8,7 @@ defmodule TeamMatesWeb.TeamMatesController do
   end
 
   def create(conn, params) do
-    id = TeamMember.store(conn, params)
+    id = TeamMember.store(params)
     json(conn, id)
   end
 end

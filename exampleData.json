@@ -6,7 +6,7 @@
       "working_hours": [
         {
           "date": "1 March 2019",
-          "working_spells": [
+          "workingTimes": [
             {"start": "10:00", "finish": "13:00"},
             {"start": "13:00", "finish": "15:00"},
             {"start": "18:00", "finish": "21:00"}
@@ -14,7 +14,7 @@
         },
         {
           "date": "2 March 2019",
-          "working_spells": [
+          "workingTimes": [
             {"start": "9:00", "finish": "11:00"},
             {"start": "13:00", "finish": "15:00"},
             {"start": "16:00", "finish": "19:00"}
