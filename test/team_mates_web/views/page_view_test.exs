@@ -1,3 +1,3 @@
-defmodule TeamMatesWeb.PageViewTest do
-  use TeamMatesWeb.ConnCase, async: true
+defmodule TeammatesWeb.PageViewTest do
+  use TeammatesWeb.ConnCase, async: true
 end

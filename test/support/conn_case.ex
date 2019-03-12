@@ -1,4 +1,4 @@
-defmodule TeamMatesWeb.ConnCase do
+defmodule TeammatesWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -19,18 +19,18 @@ defmodule TeamMatesWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias TeamMatesWeb.Router.Helpers, as: Routes
+      alias TeammatesWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint TeamMatesWeb.Endpoint
+      @endpoint TeammatesWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TeamMates.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Teammates.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TeamMates.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Teammates.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

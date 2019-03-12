@@ -1,5 +1,5 @@
-defmodule TeamMatesWeb.TeamMembersControllerTest do
-  use TeamMatesWeb.ConnCase
+defmodule TeammatesWeb.TeamMembersControllerTest do
+  use TeammatesWeb.ConnCase
 
   test "GET /add_team_members", %{conn: conn} do
     conn = get(conn, "/add_team_members")

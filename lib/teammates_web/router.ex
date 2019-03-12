@@ -1,5 +1,5 @@
-defmodule TeamMatesWeb.Router do
-  use TeamMatesWeb, :router
+defmodule TeammatesWeb.Router do
+  use TeammatesWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,22 +13,22 @@ defmodule TeamMatesWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", TeamMatesWeb do
+  scope "/", TeammatesWeb do
     pipe_through :browser
 
     get "/", PageController, :index
     get "/add_team_members", TeamMembersController, :index
   end
 
-  scope "/api", TeamMatesWeb do
+  scope "/api", TeammatesWeb do
     pipe_through :api
 
-    get "/team_mates", TeamMatesController, :index
-    post "/team_mates", TeamMatesController, :create
+    get "/teammates", TeammatesController, :index
+    post "/teammates", TeammatesController, :create
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", TeamMatesWeb do
+  # scope "/api", TeammatesWeb do
   #   pipe_through :api
   # end
 end

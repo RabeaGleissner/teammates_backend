@@ -1,4 +1,4 @@
-defmodule TeamMates.DataCase do
+defmodule Teammates.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule TeamMates.DataCase do
 
   using do
     quote do
-      alias TeamMates.Repo
+      alias Teammates.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import TeamMates.DataCase
+      import Teammates.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TeamMates.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Teammates.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TeamMates.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Teammates.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,5 +1,5 @@
-defmodule TeamMatesWeb.ErrorView do
-  use TeamMatesWeb, :view
+defmodule TeammatesWeb.ErrorView do
+  use TeammatesWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

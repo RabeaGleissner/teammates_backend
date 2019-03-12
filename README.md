@@ -1,4 +1,4 @@
-# TeamMates
+# Teammates
 
 To start your Phoenix server:
 

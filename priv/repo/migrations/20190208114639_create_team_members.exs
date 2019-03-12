@@ -1,4 +1,4 @@
-defmodule TeamMates.Repo.Migrations.CreateTeamMembers do
+defmodule Teammates.Repo.Migrations.CreateTeamMembers do
   use Ecto.Migration
 
   def change do

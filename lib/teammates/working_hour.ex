@@ -1,8 +1,7 @@
-defmodule TeamMates.WorkingHour do
+defmodule Teammates.WorkingHour do
   use Ecto.Schema
-  import Ecto.Query
   import Ecto.Changeset
-  alias TeamMates.TeamMember
+  alias Teammates.TeamMember
 
 
   @derive {Poison.Encoder, only: [:date, :finish, :start]}

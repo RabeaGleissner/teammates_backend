@@ -1,4 +1,4 @@
-defmodule TeamMatesWeb.ErrorHelpers do
+defmodule TeammatesWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -36,9 +36,9 @@ defmodule TeamMatesWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(TeamMatesWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(TeammatesWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(TeamMatesWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(TeammatesWeb.Gettext, "errors", msg, opts)
     end
   end
 end

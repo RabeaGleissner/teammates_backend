@@ -1,6 +1,6 @@
-alias TeamMates.TeamMember
-alias TeamMates.WorkingHour
-alias TeamMates.Repo
+alias Teammates.TeamMember
+alias Teammates.WorkingHour
+alias Teammates.Repo
 
 {_, start_work} = Time.new(9, 0, 0)
 {_, finish_work} = Time.new(17, 0, 0)

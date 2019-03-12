@@ -1,7 +1,7 @@
-defmodule TeamMatesWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :team_mates
+defmodule TeammatesWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :teammates
 
-  socket "/socket", TeamMatesWeb.UserSocket,
+  socket "/socket", TeammatesWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule TeamMatesWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :team_mates,
+    from: :teammates,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -39,8 +39,8 @@ defmodule TeamMatesWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_team_mates_key",
+    key: "_teammates_key",
     signing_salt: "Q1ZVZNtI"
 
-  plug TeamMatesWeb.Router
+  plug TeammatesWeb.Router
 end

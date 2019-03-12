@@ -1,4 +1,4 @@
-defmodule TeamMates.Repo.Migrations.CreateWorkingHours do
+defmodule Teammates.Repo.Migrations.CreateWorkingHours do
   use Ecto.Migration
 
   def change do

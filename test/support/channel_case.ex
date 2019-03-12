@@ -1,4 +1,4 @@
-defmodule TeamMatesWeb.ChannelCase do
+defmodule TeammatesWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule TeamMatesWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint TeamMatesWeb.Endpoint
+      @endpoint TeammatesWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TeamMates.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Teammates.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(TeamMates.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Teammates.Repo, {:shared, self()})
     end
 
     :ok

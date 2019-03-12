@@ -1,12 +1,12 @@
-defmodule TeamMatesWeb do
+defmodule TeammatesWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use TeamMatesWeb, :controller
-      use TeamMatesWeb, :view
+      use TeammatesWeb, :controller
+      use TeammatesWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule TeamMatesWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: TeamMatesWeb
+      use Phoenix.Controller, namespace: TeammatesWeb
 
       import Plug.Conn
-      import TeamMatesWeb.Gettext
-      alias TeamMatesWeb.Router.Helpers, as: Routes
+      import TeammatesWeb.Gettext
+      alias TeammatesWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/team_mates_web/templates",
-        namespace: TeamMatesWeb
+        root: "lib/teammates_web/templates",
+        namespace: TeammatesWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -39,9 +39,9 @@ defmodule TeamMatesWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import TeamMatesWeb.ErrorHelpers
-      import TeamMatesWeb.Gettext
-      alias TeamMatesWeb.Router.Helpers, as: Routes
+      import TeammatesWeb.ErrorHelpers
+      import TeammatesWeb.Gettext
+      alias TeammatesWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +56,7 @@ defmodule TeamMatesWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import TeamMatesWeb.Gettext
+      import TeammatesWeb.Gettext
     end
   end
 

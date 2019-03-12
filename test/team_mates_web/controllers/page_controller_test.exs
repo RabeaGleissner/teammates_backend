@@ -1,5 +1,5 @@
-defmodule TeamMatesWeb.PageControllerTest do
-  use TeamMatesWeb.ConnCase
+defmodule TeammatesWeb.PageControllerTest do
+  use TeammatesWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

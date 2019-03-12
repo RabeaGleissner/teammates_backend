@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :team_mates,
-  ecto_repos: [TeamMates.Repo]
+config :teammates,
+  ecto_repos: [Teammates.Repo]
 
 # Configures the endpoint
-config :team_mates, TeamMatesWeb.Endpoint,
+config :teammates, TeammatesWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5RI06oOl4V29ifdeGcYPdgJtUegr5qIb/zVikzLNbXeACo4oZ9jr/niCD6A+El4O",
-  render_errors: [view: TeamMatesWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: TeamMates.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: TeammatesWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Teammates.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
