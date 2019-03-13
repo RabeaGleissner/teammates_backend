@@ -29,6 +29,8 @@ defmodule Teammates.TeamMember do
       "timeZone" => time_zone} = params
 
     {_, %{id: user_id} }= Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
+    IO.puts('in store')
+    IO.inspect(user_id)
     user_id
   end
 

@@ -14,7 +14,7 @@ config :teammates,
 config :teammates, TeammatesWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5RI06oOl4V29ifdeGcYPdgJtUegr5qIb/zVikzLNbXeACo4oZ9jr/niCD6A+El4O",
-  render_errors: [view: TeammatesWeb.ErrorView, accepts: ~w(html json)],
+  render_errors: [view: TeammatesWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Teammates.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
