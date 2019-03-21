@@ -7,11 +7,12 @@ defmodule Teammates.TeamMember do
   alias Teammates.WorkingHour
 
 
-  @derive {Poison.Encoder, only: [:name, :time_zone, :working_hours]}
+  #@derive {Poison.Encoder, only: [:name, :time_zone, :working_hours]}
+  @derive {Poison.Encoder, only: [:name, :time_zone]}
   schema "team_members" do
     field :name, :string
     field :time_zone, :string
-    has_many :working_hours, WorkingHour
+    #has_many :working_hours, WorkingHour
 
     timestamps()
   end
@@ -21,7 +22,7 @@ defmodule Teammates.TeamMember do
       join: w in WorkingHour,
       where: w.team_member_id == t.id,
       preload: [working_hours: w]
-    Repo.all(query)
+    Repo.all(TeamMember)
   end
 
   def store(params) do
@@ -29,8 +30,6 @@ defmodule Teammates.TeamMember do
       "timeZone" => time_zone} = params
 
     {_, %{id: user_id} }= Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
-    IO.puts('in store')
-    IO.inspect(user_id)
     user_id
   end
 

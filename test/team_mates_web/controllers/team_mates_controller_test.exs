@@ -7,11 +7,10 @@ defmodule TeammatesWeb.TeammatesControllerTest do
 
   test "creates team member" do
     conn = post(build_conn(), "/api/teammates", [name: "Fred", timeZone: "US"])
-    all_team_members = TeamMember.all()
+    [fred | _others] = TeamMember.all()
 
     assert conn.status == 200
-    assert length(all_team_members) == 1
-    assert all_team_members[0]["name"] == "Fred"
+    assert fred.name == "Fred"
   end
 
   test "gets all users" do
