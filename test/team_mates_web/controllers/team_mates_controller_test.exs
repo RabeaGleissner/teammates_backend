@@ -29,9 +29,10 @@ defmodule TeammatesWeb.TeammatesControllerTest do
     assert finish == expected_finish
   end
 
-  #create team member with several working hours
+  test "creates several team members"
 
-  test "gets all users" do
+
+  test "gets all users with working hours" do
     conn = build_conn()
     fred = insert(:team_member)
     [%{date: date, start: start, finish: finish}] = fred.working_hours

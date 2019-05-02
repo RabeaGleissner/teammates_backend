@@ -10,5 +10,6 @@ defmodule TeammatesWeb.Router do
 
     get "/teammates", TeammatesController, :index
     post "/teammates", TeammatesController, :create
+    post "/working_hours/:user_id", WorkingHoursController, :create
   end
 end
