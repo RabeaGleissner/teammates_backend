@@ -28,7 +28,13 @@ defmodule Teammates.WorkingHour do
       "workingHours" => working_hours,
     } = params
     {parsed_id, _} = Integer.parse(user_id)
-    Enum.each(working_hours, fn hours -> save_working_hours(hours, parsed_id) end)
+    team_member = TeamMember.by_id(parsed_id)
+    if length(team_member) == 1 do
+      Enum.each(working_hours, fn hours -> save_working_hours(hours, parsed_id) end)
+      {:ok, length(working_hours)}
+    else
+      {:fail, 0}
+    end
   end
 
   def save_working_hours(%{"date" => date, "start" => start, "finish" => finish}, user_id) do

@@ -22,6 +22,13 @@ defmodule Teammates.TeamMember do
     |> Repo.preload(working_hours: :team_member)
   end
 
+  def by_id(id) do
+    TeamMember
+    |> where(id: ^id)
+    |> Repo.all()
+    |> Repo.preload(working_hours: :team_member)
+  end
+
   def store(%{"members" => members}) do
     Enum.each(members, fn member -> save_team_member(member)  end)
   end

@@ -3,7 +3,7 @@ defmodule TeammatesWeb.WorkingHoursController do
   alias Teammates.WorkingHour
 
   def create(conn, params) do
-    result = WorkingHour.store(params)
-    json(conn, result)
+    {status, number_of_records_inserted}= WorkingHour.store(params)
+    json(conn, number_of_records_inserted)
   end
 end
