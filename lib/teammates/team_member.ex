@@ -17,32 +17,15 @@ defmodule Teammates.TeamMember do
   end
 
   def all do
-    everything = from(t in TeamMember)
-                 |> Repo.all()
-                 |> Repo.preload(working_hours: :team_member)
+    from(t in TeamMember)
+    |> Repo.all()
+    |> Repo.preload(working_hours: :team_member)
   end
 
   def store(params) do
-    %{"name" => name,
-      "workingHours" => working_hours,
-      "timeZone" => time_zone} = params
-    [%{"date" => date,
-      "start" => start,
-      "finish" => finish
-    }] = working_hours
-    insertable_date = Date.from_iso8601(date)
+    %{"name" => name, "timeZone" => time_zone} = params
 
     {_, %{id: user_id} } = Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
-    {_, date} = Date.from_iso8601(date)
-    {_, start_time} = Time.from_iso8601(start)
-    {_, finish_time} = Time.from_iso8601(finish)
-
-    {_, %{id: user_id} } = Repo.insert(%WorkingHour{
-      date: date,
-      start: start_time,
-      finish: finish_time,
-      team_member_id: user_id
-    }, returning: true)
     user_id
   end
 

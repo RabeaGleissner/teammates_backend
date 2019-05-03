@@ -5,28 +5,15 @@ defmodule TeammatesWeb.TeammatesControllerTest do
   alias Teammates.TeamMember
 
   test "creates team member" do
-    work_date = "2019-03-10"
-    start_work = "09:00:00"
-    finish_work = "17:00:00"
     conn = post(build_conn(), "/api/teammates", [
       name: "Fred",
       timeZone: "US",
-      workingHours: [
-        %{:date => work_date, :start => start_work, :finish => finish_work},
-      ]
     ])
     [fred | _others] = TeamMember.all()
 
     assert conn.status == 200
     assert fred.name == "Fred"
     assert fred.time_zone == "US"
-    [%{date: date, start: start, finish: finish}] = fred.working_hours
-    {_, expected_date} = Date.from_iso8601(work_date)
-    {_, expected_start} = Time.from_iso8601(start_work)
-    {_, expected_finish} = Time.from_iso8601(finish_work)
-    assert date == expected_date
-    assert start == expected_start
-    assert finish == expected_finish
   end
 
   test "creates several team members"
@@ -34,7 +21,7 @@ defmodule TeammatesWeb.TeammatesControllerTest do
 
   test "gets all users with working hours" do
     conn = build_conn()
-    fred = insert(:team_member)
+    fred = insert(:team_member_with_hours)
     [%{date: date, start: start, finish: finish}] = fred.working_hours
     response = get(conn, "/api/teammates")
 

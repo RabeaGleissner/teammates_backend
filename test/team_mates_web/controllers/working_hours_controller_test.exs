@@ -19,7 +19,6 @@ defmodule TeammatesWeb.WorkingHoursControllerTest do
     ])
 
     freds_hours = WorkingHour.by_team_member(fred.id)
-    IO.inspect(freds_hours)
     assert conn.status == 200
     assert length(freds_hours) == 1
   end
