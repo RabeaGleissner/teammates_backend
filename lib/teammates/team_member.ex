@@ -22,11 +22,12 @@ defmodule Teammates.TeamMember do
     |> Repo.preload(working_hours: :team_member)
   end
 
-  def store(params) do
-    %{"name" => name, "timeZone" => time_zone} = params
+  def store(%{"members" => members}) do
+    Enum.each(members, fn member -> save_team_member(member)  end)
+  end
 
-    {_, %{id: user_id} } = Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
-    user_id
+  def save_team_member(%{"name" => name, "timeZone" => time_zone}) do
+    Repo.insert(%TeamMember{name: name, time_zone: time_zone}, returning: true)
   end
 
   @doc false

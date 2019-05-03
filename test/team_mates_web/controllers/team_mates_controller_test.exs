@@ -4,20 +4,22 @@ defmodule TeammatesWeb.TeammatesControllerTest do
   import Teammates.Factory
   alias Teammates.TeamMember
 
-  test "creates team member" do
+  test "creates team members" do
     conn = post(build_conn(), "/api/teammates", [
-      name: "Fred",
-      timeZone: "US",
+      members: [
+        %{ name: "Fred", timeZone: "US" },
+        %{ name: "Wilma", timeZone: "UK" }
+      ]
     ])
-    [fred | _others] = TeamMember.all()
+    all_members = TeamMember.all()
+    [fred, wilma | _] = all_members
 
     assert conn.status == 200
-    assert fred.name == "Fred"
-    assert fred.time_zone == "US"
+    assert length(all_members) == 2
+    assert fred.name === "Fred"
+    assert fred.time_zone === "US"
+    assert wilma.time_zone === "UK"
   end
-
-  test "creates several team members"
-
 
   test "gets all users with working hours" do
     conn = build_conn()
